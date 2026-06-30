@@ -1,0 +1,41 @@
+/* ApexCareers extras (kept separate to avoid touching functional code) */
+
+@keyframes apexLogo {
+  0%, 100% { transform: translateY(0) scale(1); box-shadow: 0 0 0 rgba(88,166,255,0); }
+  50% { transform: translateY(-2px) scale(1.03); box-shadow: 0 0 24px rgba(88,166,255,0.25); }
+}
+
+/* Alias used in JSX class: animate-[apexLogo_3s_ease-in-out_infinite] */
+@keyframes apexLogo_3s_ease-in-out_infinite {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-2px) scale(1.03); }
+}
+
+@keyframes apexHeroText_pulse {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-2px); opacity: 0.95; }
+}
+
+@keyframes apexHeroDream_pop {
+  0%, 100% { transform: translateY(0) scale(1); filter: saturate(1); }
+  50% { transform: translateY(-3px) scale(1.02); filter: saturate(1.25); }
+}
+
+@keyframes apexHeroSearch_float {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+
+@keyframes apexHeroBtn_slide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(2px) scale(1.02); }
+}
+
+@keyframes apexHeroBrand_spin {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+/* Tailwind arbitrary animation uses these exact names */
+
+

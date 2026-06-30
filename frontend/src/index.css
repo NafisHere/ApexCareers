@@ -1,0 +1,107 @@
+@import "./apex-theme.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+  @layer base {
+    :root {
+      /* ApexCareers palette (default = dark feel) */
+      --background: 240 10% 6%; /* #0A0A0A */
+      --foreground: 210 40% 98%; /* #F0F6FC */
+
+      --card: 240 8% 9%; /* #18181B */
+      --card-foreground: 210 40% 98%;
+
+      --popover: 240 10% 6%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 209 100% 63%; /* #58A6FF */
+      --primary-foreground: 240 10% 6%;
+
+      --secondary: 214 20% 12%; /* #161B22 */
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 215 18% 26%; /* ~#8B949E */
+      --muted-foreground: 215 16% 62%; /* ~#8B949E */
+
+      --accent: 259 76% 68%; /* #8B5CF6 */
+      --accent-foreground: 240 10% 6%;
+
+      --destructive: 4 83% 64%; /* #F85149 */
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 216 14% 30%; /* #30363D */
+      --input: 216 14% 30%;
+      --ring: 209 100% 63%;
+
+      --radius: 0.6rem;
+    }
+
+    /* Keep .dark behavior for components that rely on it */
+    .dark {
+      --background: 240 10% 6%;
+      --foreground: 210 40% 98%;
+
+      --card: 240 8% 9%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 240 10% 6%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 209 100% 63%;
+      --primary-foreground: 240 10% 6%;
+
+      --secondary: 214 20% 12%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 215 18% 26%;
+      --muted-foreground: 215 16% 62%;
+
+      --accent: 259 76% 68%;
+      --accent-foreground: 240 10% 6%;
+
+      --destructive: 4 83% 64%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 216 14% 30%;
+      --input: 216 14% 30%;
+      --ring: 209 100% 63%;
+    }
+  }
+
+  /* Animated background + subtle glow */
+  @layer base {
+    * {
+      @apply border-border;
+    }
+
+    body {
+      @apply bg-background text-foreground;
+      background-image:
+        radial-gradient(800px circle at 20% 10%, rgba(88,166,255,0.18), transparent 40%),
+        radial-gradient(650px circle at 85% 15%, rgba(139,92,246,0.16), transparent 45%),
+        radial-gradient(700px circle at 50% 95%, rgba(63,185,80,0.10), transparent 50%);
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(120deg, rgba(88,166,255,0.10), rgba(139,92,246,0.08), rgba(88,166,255,0.10));
+      mix-blend-mode: screen;
+      opacity: 0.35;
+      transform: translateZ(0);
+      animation: apex-float 10s ease-in-out infinite;
+    }
+
+    @keyframes apex-float {
+      0%, 100% { filter: blur(0px); opacity: 0.25; }
+      50% { filter: blur(1px); opacity: 0.45; }
+    }
+  }
